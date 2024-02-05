@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Edit
+{% endblock %}
+{% block content %}
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+     <td>{{c.id}}</td>
+    <tr>
+  <tr>
+  <th>POSTER</th>
+     <td><img src="{{c.img.url}}" height="100px" width="100px">}</td>
+  </tr>
+  <tr>
+  <th>TITLE</th>
+     <td>{{c.name}}</td>
+  </tr>
+  <tr>
+  <th>Year</th>
+     <td>{{c.year}}</td>
+  </tr>
+  <tr>
+  <th>DESC</th>
+     <td>{{c.desc}}</td>
+  </tr>
+  <tr>
+  <th>EDIT</th>
+    <td><a class="btn btn-primary" href="{% url 'cine:filmedit' c.id %}" role="button">EDIT</a></td>
+
+
+  </tr>
+    <th>Delete</th>
+    <td><a class="btn btn-primary" href="{% url 'cine:filmdelete' c.id %}" role="button">DELETE</a></td>
+
+  </tr>
+  </center>
+{% endblock %}

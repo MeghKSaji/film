@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+<center>
+<h3 class="mt-4">Movie List</h3></center>
+
+
+
+
+
+    {% for i in  c%}
+            <div class="card" style="width: 18rem;">
+  <img src="{{i.img.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.year}}</p>
+      <p class="card-text">{{i.desc}}</p>
+    <a href="{% url 'cine:filmdetail' i.id %}" class="btn btn-primary">VIEW</a>
+
+  </div>
+</div>
+
+
+    {% endfor %}
+
+{% endblock %}
+
+
